@@ -31,3 +31,6 @@ The following steps should be performed from the OpenShift console:
 - Leave "Process the template" checked and click "Continue"
 - Update the parameters that are appropriate for your app. Minimally set APP_GIT_URI to your git repo location and REPO_DOCKERFILE_PATH to your dockerfile path location.
 - Click "Create"
+- Click "Applications" then "Deployments". Wait for your app to be deployed.
+- Click "Appliations" then "Services" select your new service and click "create route".
+- Navigate to your new route.
