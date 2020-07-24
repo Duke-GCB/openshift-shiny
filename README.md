@@ -28,7 +28,7 @@ Another example can be seen at [examples/hello-shiny/Dockerfile](examples/hello-
 ### Deploy your shiny app
 In this step we will run an OpenShift template to deploy your shiny app.
 The following steps should be performed from the OpenShift console:
-- Create a new project and lock onto it
+- Create a new OpenShift project and select it
 - In the top right corner Click "Add To Project" then "Import YAML/JSON" - this will open up a "Import YAML/JSON" dialog
 - Copy the contents of [openshift/shiny-server.yaml](https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/improve-readme/openshift/shiny-server.yaml) and paste it into the "Import YAML/JSON" dialog
 - Click "Create
