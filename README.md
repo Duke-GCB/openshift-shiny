@@ -5,7 +5,7 @@ This is accomplished by providing
 1. Base Docker images that are compatible with OpenShift
 2. OpenShift Templates for deploying a shiny app
 
-The base docker images add OpenShift specific setup to [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
+The Docker image tags match those of parent docker images from [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
 
 ## Prerequisites
 - Shiny R code stored in a git repository
