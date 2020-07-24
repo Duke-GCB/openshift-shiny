@@ -10,8 +10,8 @@ The docker images add OpenShift specific setup to [rocker/shiny* images](https:/
 
 ### Create a Dockerfile in your git repo
 Add your Rcode and requirements in a file named `Dockerfile`.
-This dockerfile should extend a dukegcb/openshift-shiny* image (such as `dukegcb/openshift-shiny-verse:4.0.2`).
-For example if your R shiny code is under directory named `src` and you want to install the [here shiny package](https://github.com/jennybc/here_here) create a `Dockerfile` with the following contents:
+This Dockerfile should extend a dukegcb/openshift-shiny* image (such as `dukegcb/openshift-shiny-verse:4.0.2`).
+For example if your R shiny code is under directory named `src` and you want to install the [here shiny package](https://github.com/jennybc/here_here) create a file named `Dockerfile` with the following contents:
 ```
 FROM dukegcb/openshift-shiny-verse:4.0.2
 RUN install2.r here
