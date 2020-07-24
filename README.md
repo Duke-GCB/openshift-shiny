@@ -3,8 +3,6 @@ Allows a user to simply deploy a R Shiny app to an OpenShift cluster.
 This is accomplished by providing OpenShift compatible Docker images and OpenShift Templates for running shiny apps.
 The docker images add OpenShift specific setup to [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
 
-_NOTE: Currently dukegcb/openshift-shiny-verse/4.0.2 is the only `dukegcb/openshift-shiny*` image._
-
 ## Prerequisites
 - Shiny R code stored in a git repository
 
