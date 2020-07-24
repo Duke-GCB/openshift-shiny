@@ -1,7 +1,7 @@
 # openshift-shiny
-OpenShift compatible Docker images and OpenShift Templates for running shiny apps.
-This will allow a user to simply deploy a R Shiny app to an OpenShift cluster.
-The docker images built here add OpenShift specific setup to [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
+Allows a user to simply deploy a R Shiny app to an OpenShift cluster.
+This is accomplished by providing OpenShift compatible Docker images and OpenShift Templates for running shiny apps.
+The docker images add OpenShift specific setup to [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
 
 _NOTE: Currently dukegcb/openshift-shiny-verse/4.0.2 is the only `dukegcb/openshift-shiny*` image._
 
@@ -23,7 +23,8 @@ The `install2.r` script is a simple utility to install R packages.
 
 Another example can be seen at [examples/hello-shiny/Dockerfile](examples/hello-shiny/Dockerfile).
 
-### Run OpenShift template to deploy your shiny app
+### Deploy your shiny app
+In this step we will run an OpenShift template to deploy your shiny app.
 The following steps should be performed from the OpenShift console:
 - Create a new project and lock onto it
 - In the top right corner Click "Add To Project" then "Import YAML/JSON" - this will open up a "Import YAML/JSON" dialog
@@ -32,8 +33,3 @@ The following steps should be performed from the OpenShift console:
 - Leave "Process the template" checked and click "Continue"
 - Update the parameters that are appropriate for your app. Minimally set APP_GIT_URI to your git repo location and REPO_DOCKERFILE_PATH to your dockerfile path location.
 - Click "Create"
-
-
-
-
- 
