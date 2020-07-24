@@ -10,7 +10,7 @@ The Docker image tags match those of parent docker images from [rocker/shiny* im
 ## Prerequisites
 - Shiny R code stored in a git repository
 
-## Steps to Deploy your code
+## Steps to Deploy your shiny app
 
 ### Create a Dockerfile in your git repo
 Add your Rcode and requirements in a file named `Dockerfile`.
