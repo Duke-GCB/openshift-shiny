@@ -1,7 +1,11 @@
 # openshift-shiny
 Allows a user to simply deploy a [R](https://www.r-project.org/) [Shiny](https://shiny.rstudio.com/) app to an OpenShift cluster.
-This is accomplished by providing base Docker images and OpenShift Templates for deploying a shiny app.
-The docker images add OpenShift specific setup to [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
+
+This is accomplished by providing
+1. Base Docker images that are compatible with OpenShift
+2. OpenShift Templates for deploying a shiny app
+
+The base docker images add OpenShift specific setup to [rocker/shiny* images](https://github.com/rocker-org/rocker-versioned2).
 
 ## Prerequisites
 - Shiny R code stored in a git repository
