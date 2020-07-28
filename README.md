@@ -23,8 +23,6 @@ ADD ./src /srv/code
 ```
 The `install2.r` script is a simple utility to install R packages.
 
-Another example can be seen at [examples/hello-shiny/Dockerfile](examples/hello-shiny/Dockerfile).
-
 ### Deploy your shiny app using the OpenShift console
 In this step we will run an OpenShift template to deploy your shiny app.
 The following steps should be performed from the OpenShift console:
