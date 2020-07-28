@@ -25,7 +25,7 @@ The `install2.r` script is a simple utility to install R packages.
 
 Another example can be seen at [examples/hello-shiny/Dockerfile](examples/hello-shiny/Dockerfile).
 
-### Deploy your shiny app
+### Deploy your shiny app using the OpenShift console
 In this step we will run an OpenShift template to deploy your shiny app.
 The following steps should be performed from the OpenShift console:
 - Create a new OpenShift project and select it
@@ -38,3 +38,29 @@ The following steps should be performed from the OpenShift console:
 - Click "Applications" then "Deployments". Wait for your app to be deployed.
 - Click "Applications" then "Services". Select your new service and click "create route".
 - Navigate to your new route to view your app.
+
+### Deploy your shiny app using the command line
+Create a project for your app.
+```
+oc new-project <your_project_name>
+```
+
+Deploy you app.
+```
+oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/openshift/shiny-server.yaml \
+   -p APP_GIT_URI=<YOUR_GIT_REPO> \
+   -p APP_GIT_BRANCH=<YOUR_GIT_BRANCH> \
+   -p REPO_DOCKERFILE_PATH=<PATH_TO_DOCKERFILE_IN_YOUR_REPO> \
+   | oc create -f -
+```
+Parameters for shiny-server.yaml
+```
+Param Name             Description              DEFAULT VALUE
+================================================================================================
+APP_NAME               Name used for the app    shiny-app
+APP_LABEL              Label used for the app   shiny
+APP_GIT_URI            Deployment git uri       https://github.com/Duke-GCB/openshift-shiny.git
+APP_GIT_BRANCH         Deployment git branch    master
+REPO_DOCKERFILE_PATH   Deployment git branch    examples/hello-shiny/Dockerfile
+```
+If you just wish to test the template you can deply a default.
