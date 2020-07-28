@@ -19,7 +19,7 @@ This file will specify:
 - Any additional requirements that need to be installed
 - Location of your R code within your repo
 
-As an example if your R shiny app is under a directory named `src` within your git repo and you need no additional requirements create a `Dockerfile` with the following contents:
+As an example if your R shiny app is under a directory named `src` within your git repo and has no additional requirements create a `Dockerfile` with the following contents:
 ```
 FROM dukegcb/openshift-shiny-verse:4.0.2
 ADD ./src /srv/code
