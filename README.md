@@ -76,6 +76,7 @@ REPO_DOCKERFILE_PATH   Deployment git branch    examples/hello-shiny/Dockerfile
 
 If you just wish to try out the template use the default values to deploy the example hello-shiny app like so:
 ```
-oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/openshift/shiny-server.yaml | oc create -f -
+oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/openshift/shiny-server.yaml \
+    | oc create -f -
 ```
 
