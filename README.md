@@ -27,7 +27,7 @@ ADD ./src /srv/code
 
 If you need to additionally install the [here shiny package](https://github.com/jennybc/here_here) create a file named `Dockerfile` with the following contents:
 
-For example if yourf R shiny code is under directory named `src` and you want to install the [here shiny package](https://github.com/jennybc/here_here) create a file named `Dockerfile` with the following contents:
+For example if yourf R shiny code is under directory named `src` and you want to install the [here package](https://github.com/jennybc/here_here) create a file named `Dockerfile` with the following contents:
 ```
 FROM dukegcb/openshift-shiny-verse:4.0.2
 RUN install2.r here
