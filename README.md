@@ -13,12 +13,26 @@ The Docker image tags match those of parent docker images from [rocker/shiny* im
 ## Steps to Deploy your shiny app
 
 ### Create a Dockerfile in your git repo
-Add your Rcode and requirements in a file named `Dockerfile`.
-This Dockerfile should extend a dukegcb/openshift-shiny* image (such as `dukegcb/openshift-shiny-verse:4.0.2`).
-For example if your R shiny code is under directory named `src` and you want to install the [here shiny package](https://github.com/jennybc/here_here) create a file named `Dockerfile` with the following contents:
+Create a file named `Dockerfile` in your git repo.
+This file will specify:
+- The base docker image to use (such as `dukegcb/openshift-shiny-verse:4.0.2`)
+- Any additional requirements that need to be installed
+- Location of your R code within your repo
+
+```
+FROM <BASE-IMAGE-NAME>
+ADD ./<R-CODE_DIRNAME> /srv/code
+```
+
+For example if your requirements are shiny and tidyverse and your R shiny app is under a directory named `src` create a `Dockerfile with the following contents:
 ```
 FROM dukegcb/openshift-shiny-verse:4.0.2
-RUN install2.r here
+ADD ./src /srv/code
+```
+
+For example if yourf R shiny code is under directory named `src` and you want to install the [here shiny package](https://github.com/jennybc/here_here) create a file named `Dockerfile` with the following contents:
+```
+FROM dukegcb/openshift-shiny-verse:4.0.2
 ADD ./src /srv/code
 ```
 The `install2.r` script is a simple utility to install R packages.
