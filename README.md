@@ -55,7 +55,7 @@ oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/
 ```
 Parameters for shiny-server.yaml
 ```
-Param Name             Description              DEFAULT VALUE
+PARAMETER NAME         DESCRIPTION              DEFAULT VALUE
 ================================================================================================
 APP_NAME               Name used for the app    shiny-app
 APP_LABEL              Label used for the app   shiny
@@ -63,4 +63,9 @@ APP_GIT_URI            Deployment git uri       https://github.com/Duke-GCB/open
 APP_GIT_BRANCH         Deployment git branch    master
 REPO_DOCKERFILE_PATH   Deployment git branch    examples/hello-shiny/Dockerfile
 ```
-If you just wish to test the template you can deply a default.
+
+If you just wish to test the template you can run use the default values to deploy the example hello-shiny app:
+```
+oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/openshift/shiny-server.yaml | oc create -f -
+```
+
