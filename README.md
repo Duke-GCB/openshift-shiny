@@ -53,7 +53,7 @@ Create a project for your app.
 oc new-project <your_project_name>
 ```
 
-Deploy you app.
+Deploy your app.
 ```
 oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/openshift/shiny-server.yaml \
    -p APP_GIT_URI=<YOUR_GIT_REPO> \
@@ -61,7 +61,8 @@ oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/
    -p REPO_DOCKERFILE_PATH=<PATH_TO_DOCKERFILE_IN_YOUR_REPO> \
    | oc create -f -
 ```
-Parameters for shiny-server.yaml
+
+The list of parameters for shiny-server.yaml are as follows:
 ```
 PARAMETER NAME         DESCRIPTION              DEFAULT VALUE
 ================================================================================================
@@ -77,4 +78,3 @@ If you just wish to try out the template use the default values to deploy the ex
 oc process -f https://raw.githubusercontent.com/Duke-GCB/openshift-shiny/master/openshift/shiny-server.yaml \
     | oc create -f -
 ```
-
