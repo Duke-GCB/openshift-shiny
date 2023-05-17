@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
   name: shiny-server-template
@@ -66,8 +66,8 @@ objects:
             httpGet:
               path: /
               port: 3838
-            initialDelaySeconds: "${PROBE_INITIAL_DELAY}"
-            timeoutSeconds: "${PROBE_TIMEOUT}"
+            initialDelaySeconds: ${{PROBE_INITIAL_DELAY}}
+            timeoutSeconds: "${{PROBE_TIMEOUT}}"
           name: "${APP_NAME}"
           ports:
           - containerPort: 3838
@@ -75,8 +75,8 @@ objects:
             httpGet:
               path: /
               port: 3838
-            initialDelaySeconds: "${PROBE_INITIAL_DELAY}"
-            timeoutSeconds: "${PROBE_TIMEOUT}"
+            initialDelaySeconds: "${{PROBE_INITIAL_DELAY}}"
+            timeoutSeconds: "${{PROBE_TIMEOUT}}"
     triggers:
     - imageChangeParams:
         automatic: true
